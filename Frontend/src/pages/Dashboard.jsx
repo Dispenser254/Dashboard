@@ -45,6 +45,7 @@ function SalesThisWeek() {
 					<h3 className="text-base font-normal text-gray-600 dark:text-gray-400">
 						Sales this week
 					</h3>
+					<p>Hello muthama</p>
 				</div>
 				<div className="flex flex-1 items-center justify-end text-base font-bold text-green-600 dark:text-green-400">
 					<span className="p-1">12.5%</span> <HiArrowTrendingUp size={20} />
