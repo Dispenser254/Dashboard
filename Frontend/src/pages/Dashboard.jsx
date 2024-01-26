@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // import React from 'react'
 
 import { Badge, Datepicker, Table } from "flowbite-react";
@@ -43,9 +44,8 @@ function SalesThisWeek() {
 						Kshs. 45,000
 					</span>
 					<h3 className="text-base font-normal text-gray-600 dark:text-gray-400">
-						Sales this week
+						Hey what's up it's Dispenser, Sales this week
 					</h3>
-					<p>Hello muthama</p>
 				</div>
 				<div className="flex flex-1 items-center justify-end text-base font-bold text-green-600 dark:text-green-400">
 					<span className="p-1">12.5%</span> <HiArrowTrendingUp size={20} />
