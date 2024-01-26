@@ -2,7 +2,12 @@
 import { Sidebar, TextInput } from "flowbite-react";
 import {
 	HiChartPie,
+	HiChartSquareBar,
+	HiClipboard,
+	HiCollection,
 	HiInboxIn,
+	HiInformationCircle,
+	HiLockClosed,
 	HiSearch,
 	HiShoppingBag,
 	HiUsers,
@@ -12,7 +17,7 @@ import { useSidebarContext } from "../context/SidebarContext";
 import SmallScreen from "../helpers/SmallScreen";
 import { useEffect, useState } from "react";
 
-export const SidebarMenu = () => {
+export function SidebarMenu() {
 	const { isOpenOnSmallScreens: isSidebarOpenOnSmallScreens } =
 		useSidebarContext();
 	const [currentPage, setCurrentPage] = useState("");
@@ -64,7 +69,9 @@ export const SidebarMenu = () => {
 									icon={HiInboxIn}
 									label="3"
 									className={
-										"/" === currentPage ? "bg-gray-100 dark:bg-gray-700" : ""
+										"/mailing/inbox" === currentPage
+											? "bg-gray-100 dark:bg-gray-700"
+											: ""
 									}
 								>
 									Inbox
@@ -152,6 +159,53 @@ export const SidebarMenu = () => {
 										Settings
 									</Sidebar.Item>
 								</Sidebar.Collapse>
+								<Sidebar.Collapse icon={HiChartSquareBar} label="Pages">
+									<Sidebar.Item href="/pages/pricing">Pricing</Sidebar.Item>
+									<Sidebar.Item href="/pages/maintenance">
+										Maintenance
+									</Sidebar.Item>
+									<Sidebar.Item href="/pages/404">404 not found</Sidebar.Item>
+									<Sidebar.Item href="/pages/500">
+										500 server error
+									</Sidebar.Item>
+								</Sidebar.Collapse>
+								<Sidebar.Collapse icon={HiLockClosed} label="Authentication">
+									<Sidebar.Item href="/authentication/sign-in">
+										Sign in
+									</Sidebar.Item>
+									<Sidebar.Item href="/authentication/sign-up">
+										Sign up
+									</Sidebar.Item>
+									<Sidebar.Item href="/authentication/forgot-password">
+										Forgot password
+									</Sidebar.Item>
+									<Sidebar.Item href="/authentication/reset-password">
+										Reset password
+									</Sidebar.Item>
+									<Sidebar.Item href="/authentication/profile-lock">
+										Profile lock
+									</Sidebar.Item>
+								</Sidebar.Collapse>
+							</Sidebar.ItemGroup>
+							<Sidebar.ItemGroup>
+								<Sidebar.Item
+									href="https://github.com/themesberg/flowbite-react/"
+									icon={HiClipboard}
+								>
+									Docs
+								</Sidebar.Item>
+								<Sidebar.Item
+									href="https://flowbite-react.com/"
+									icon={HiCollection}
+								>
+									Components
+								</Sidebar.Item>
+								<Sidebar.Item
+									href="https://github.com/themesberg/flowbite-react/issues"
+									icon={HiInformationCircle}
+								>
+									Help
+								</Sidebar.Item>
 							</Sidebar.ItemGroup>
 						</Sidebar.Items>
 					</div>
@@ -159,4 +213,6 @@ export const SidebarMenu = () => {
 			</Sidebar>
 		</div>
 	);
-};
+}
+
+export default SidebarMenu;
